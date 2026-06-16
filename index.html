@@ -1,11 +1,551 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr" class="scroll-smooth h-full">
 <head>
     <meta charset="UTF-8">
-    <title>Share Hub</title>
-    <style>body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f4f4f4; }</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Smart Bee | Premium Serverless Utility Network</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Access premium, 100% local and serverless web utilities. High-performance, secure tools for PDF conversion, image compression, and resizing. Your files never leave your device.">
+    <meta name="keywords" content="PDF converter, image compressor, PDF to JPG, JPG to PDF, image resizer, serverless tools, local web utilities, secure file converter, privacy tools">
+    <meta name="author" content="The Smart Bee Network">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://share.com.ly">
+    <meta property="og:title" content="The Smart Bee | Premium Serverless Utility Network">
+    <meta property="og:description" content="Convert, compress, and resize files instantly with our local, serverless tools. Maximum privacy, zero server uploads.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://share.com.ly">
+    <meta property="twitter:title" content="The Smart Bee | Premium Serverless Utility Network">
+    <meta property="twitter:description" content="Convert, compress, and resize files instantly with our local, serverless tools. Maximum privacy, zero server uploads.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bee: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15', // Core Bee-Gold
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                            900: '#713f12',
+                        },
+                        matte: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        arabic: ['Cairo', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts (Inter & Cairo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Smooth transition for language switching */
+        .lang-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Honeycomb decorative pattern */
+        .honeycomb-pattern {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66zm0 2L56 84L56 100L28 100L0 100L0 84L28 68z' fill='%23facc15' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
 </head>
-<body>
-    <h1>مستودع منصة Share الرئيسي جاهز ومفعّل 🚀</h1>
+<body class="honeycomb-pattern text-matte-900 font-sans min-h-screen flex flex-col lang-transition">
+
+    <!-- Top Glow Bar -->
+    <div class="h-1.5 w-full bg-gradient-to-r from-bee-400 via-yellow-300 to-bee-500"></div>
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-matte-200/60 bg-white/85 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Identity -->
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="w-10 h-10 rounded-xl bg-bee-400 flex items-center justify-center shadow-md shadow-bee-400/20 hover:scale-105 transition-transform duration-300">
+                        <!-- Elegant Honeycomb Grid / Bee SVG Icon -->
+                        <svg class="w-6 h-6 text-matte-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-bee-600 uppercase block" data-i18n="brand-tag">PREMIUM NETWORK</span>
+                        <h1 class="text-xl font-extrabold tracking-tight text-matte-900" data-i18n="brand-title">THE SMART BEE</h1>
+                    </div>
+                </div>
+
+                <!-- Right Controls: Status & Language Toggle -->
+                <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                    <!-- Network Status (Hidden on mobile) -->
+                    <div class="hidden md:flex items-center space-x-2 rtl:space-x-reverse px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span class="text-xs font-medium text-emerald-800" data-i18n="status-text">All Systems Operational</span>
+                    </div>
+
+                    <!-- Language Selector Switch -->
+                    <button onclick="toggleLanguage()" class="flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 rounded-xl border border-matte-200 bg-white hover:bg-matte-50 hover:border-matte-300 transition-all duration-200 shadow-sm text-sm font-semibold text-matte-800">
+                        <svg class="w-4 h-4 text-matte-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2m4-3H9a2 2 0 00-2 2v3M12 2a10 10 0 100 20 10 10 0 000-20z" />
+                        </svg>
+                        <span id="lang-btn-text">العربية</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 flex flex-col justify-center">
+        
+        <!-- Hero Section -->
+        <div class="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+            <!-- Badge -->
+            <div class="inline-flex items-center space-x-2 rtl:space-x-reverse bg-bee-100 border border-bee-300/60 rounded-full px-4 py-1.5 mb-6 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-bee-500"></span>
+                <span class="text-xs font-bold text-bee-900 tracking-wider uppercase" data-i18n="hero-badge">100% Serverless & Private</span>
+            </div>
+            
+            <!-- Main Heading -->
+            <h2 class="text-4xl md:text-6xl font-black text-matte-900 tracking-tight leading-none mb-6" id="hero-heading">
+                High-Performance <span class="text-transparent bg-clip-text bg-gradient-to-r from-bee-600 to-bee-500">Local Utilities</span>
+            </h2>
+            
+            <!-- Subtitle -->
+            <p class="text-lg md:text-xl text-matte-800 font-normal leading-relaxed mb-8" data-i18n="hero-subtitle">
+                Experience ultra-fast file operations without compromising security. Every single tool runs entirely inside your browser—your sensitive data never touches an external server.
+            </p>
+
+            <!-- Quick Trust Badges -->
+            <div class="flex flex-wrap justify-center gap-4 text-xs font-semibold text-matte-800">
+                <div class="flex items-center space-x-1.5 rtl:space-x-reverse bg-white px-3.5 py-2 rounded-lg border border-matte-200 shadow-sm">
+                    <svg class="w-4 h-4 text-bee-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                    <span data-i18n="badge-privacy">Zero Server Uploads</span>
+                </div>
+                <div class="flex items-center space-x-1.5 rtl:space-x-reverse bg-white px-3.5 py-2 rounded-lg border border-matte-200 shadow-sm">
+                    <svg class="w-4 h-4 text-bee-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    <span data-i18n="badge-speed">Instant Browser Execution</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid Matrix: 5 Tool Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+            
+            <!-- Card 1: Image to PDF -->
+            <a href="https://a.share.com.ly" target="_blank" rel="noopener noreferrer" class="group relative bg-white border border-matte-200 hover:border-bee-400 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-bee-100/40 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div>
+                    <!-- Category & Status -->
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xs font-bold tracking-wider text-bee-700 uppercase bg-bee-50 px-2.5 py-1 rounded-md" data-i18n="cat-pdf">PDF UTILITY</span>
+                        <span class="text-[10px] font-bold tracking-widest text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full uppercase" data-i18n="status-local">LOCAL</span>
+                    </div>
+                    <!-- Icon -->
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-bee-100 to-bee-200 flex items-center justify-center text-matte-900 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-bee-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <!-- Title & Desc -->
+                    <h3 class="text-xl font-bold text-matte-900 mb-2 group-hover:text-bee-700 transition-colors" data-i18n="card1-title">Image to PDF</h3>
+                    <p class="text-sm text-matte-800 leading-relaxed mb-6" data-i18n="card1-desc">Convert PNG, JPG, WebP, and other image formats into high-quality PDF documents locally in your browser.</p>
+                </div>
+                <!-- Action Link -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-bold text-matte-900 group-hover:text-bee-600 transition-colors mt-auto">
+                    <span data-i18n="action-launch">Launch Utility</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Card 2: Image Compressor -->
+            <a href="https://b.share.com.ly" target="_blank" rel="noopener noreferrer" class="group relative bg-white border border-matte-200 hover:border-bee-400 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-bee-100/40 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div>
+                    <!-- Category & Status -->
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xs font-bold tracking-wider text-bee-700 uppercase bg-bee-50 px-2.5 py-1 rounded-md" data-i18n="cat-img">IMAGE UTILITY</span>
+                        <span class="text-[10px] font-bold tracking-widest text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full uppercase" data-i18n="status-local">LOCAL</span>
+                    </div>
+                    <!-- Icon -->
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-bee-100 to-bee-200 flex items-center justify-center text-matte-900 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-bee-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17" />
+                        </svg>
+                    </div>
+                    <!-- Title & Desc -->
+                    <h3 class="text-xl font-bold text-matte-900 mb-2 group-hover:text-bee-700 transition-colors" data-i18n="card2-title">Image Compressor</h3>
+                    <p class="text-sm text-matte-800 leading-relaxed mb-6" data-i18n="card2-desc">Reduce the file size of your photos instantly and optimize them without losing any visual quality.</p>
+                </div>
+                <!-- Action Link -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-bold text-matte-900 group-hover:text-bee-600 transition-colors mt-auto">
+                    <span data-i18n="action-launch">Launch Utility</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Card 3: PDF to JPG Converter -->
+            <a href="https://c.share.com.ly" target="_blank" rel="noopener noreferrer" class="group relative bg-white border border-matte-200 hover:border-bee-400 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-bee-100/40 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div>
+                    <!-- Category & Status -->
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xs font-bold tracking-wider text-bee-700 uppercase bg-bee-50 px-2.5 py-1 rounded-md" data-i18n="cat-pdf">PDF UTILITY</span>
+                        <span class="text-[10px] font-bold tracking-widest text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full uppercase" data-i18n="status-local">LOCAL</span>
+                    </div>
+                    <!-- Icon -->
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-bee-100 to-bee-200 flex items-center justify-center text-matte-900 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-bee-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                        </svg>
+                    </div>
+                    <!-- Title & Desc -->
+                    <h3 class="text-xl font-bold text-matte-900 mb-2 group-hover:text-bee-700 transition-colors" data-i18n="card3-title">PDF to JPG Converter</h3>
+                    <p class="text-sm text-matte-800 leading-relaxed mb-6" data-i18n="card3-desc">Extract all embedded pages inside a PDF document and save them as separate high-definition JPG images.</p>
+                </div>
+                <!-- Action Link -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-bold text-matte-900 group-hover:text-bee-600 transition-colors mt-auto">
+                    <span data-i18n="action-launch">Launch Utility</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Card 4: JPG to PDF Converter -->
+            <a href="https://d.share.com.ly" target="_blank" rel="noopener noreferrer" class="group relative bg-white border border-matte-200 hover:border-bee-400 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-bee-100/40 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div>
+                    <!-- Category & Status -->
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xs font-bold tracking-wider text-bee-700 uppercase bg-bee-50 px-2.5 py-1 rounded-md" data-i18n="cat-pdf">PDF UTILITY</span>
+                        <span class="text-[10px] font-bold tracking-widest text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full uppercase" data-i18n="status-local">LOCAL</span>
+                    </div>
+                    <!-- Icon -->
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-bee-100 to-bee-200 flex items-center justify-center text-matte-900 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-bee-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <!-- Title & Desc -->
+                    <h3 class="text-xl font-bold text-matte-900 mb-2 group-hover:text-bee-700 transition-colors" data-i18n="card4-title">JPG to PDF Converter</h3>
+                    <p class="text-sm text-matte-800 leading-relaxed mb-6" data-i18n="card4-desc">Compile several JPG files into a single, beautifully formatted, and cohesive PDF publication instantly.</p>
+                </div>
+                <!-- Action Link -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-bold text-matte-900 group-hover:text-bee-600 transition-colors mt-auto">
+                    <span data-i18n="action-launch">Launch Utility</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Card 5: Image Resizer -->
+            <a href="https://e.share.com.ly" target="_blank" rel="noopener noreferrer" class="group relative bg-white border border-matte-200 hover:border-bee-400 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-bee-100/40 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div>
+                    <!-- Category & Status -->
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xs font-bold tracking-wider text-bee-700 uppercase bg-bee-50 px-2.5 py-1 rounded-md" data-i18n="cat-img">IMAGE UTILITY</span>
+                        <span class="text-[10px] font-bold tracking-widest text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full uppercase" data-i18n="status-local">LOCAL</span>
+                    </div>
+                    <!-- Icon -->
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-bee-100 to-bee-200 flex items-center justify-center text-matte-900 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-6 h-6 text-bee-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
+                        </svg>
+                    </div>
+                    <!-- Title & Desc -->
+                    <h3 class="text-xl font-bold text-matte-900 mb-2 group-hover:text-bee-700 transition-colors" data-i18n="card5-title">Image Resizer</h3>
+                    <p class="text-sm text-matte-800 leading-relaxed mb-6" data-i18n="card5-desc">Resize and scale images to exact dimensions, aspect ratios, or target file constraints with precision control.</p>
+                </div>
+                <!-- Action Link -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-bold text-matte-900 group-hover:text-bee-600 transition-colors mt-auto">
+                    <span data-i18n="action-launch">Launch Utility</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Card 6: Dynamic Network Info / Stats -->
+            <div class="relative bg-gradient-to-br from-matte-900 to-matte-800 text-white rounded-2xl p-8 shadow-md flex flex-col justify-between overflow-hidden group">
+                <!-- Honeycomb Accent inside -->
+                <div class="absolute inset-0 opacity-10 honeycomb-pattern pointer-events-none"></div>
+                <div>
+                    <span class="text-xs font-bold tracking-wider text-bee-400 uppercase block mb-6" data-i18n="network-info">NETWORK ARCHITECTURE</span>
+                    <h3 class="text-2xl font-black text-white mb-4 leading-tight" data-i18n="network-title">Privacy by Design</h3>
+                    <p class="text-sm text-matte-200 leading-relaxed mb-6" data-i18n="network-desc">
+                        Our utility matrix operates completely client-side. The code is executed using your computer's local processing power, meaning your data never touches any remote cloud storage.
+                    </p>
+                </div>
+                <div class="border-t border-matte-700/60 pt-4 mt-auto flex justify-between items-center text-xs text-matte-300">
+                    <span data-i18n="architecture-tag">Serverless WASM / JS</span>
+                    <span class="font-bold text-bee-400">v2.4.0</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Privacy & Performance Banner -->
+        <div class="bg-white border border-matte-200 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                <div class="w-12 h-12 rounded-full bg-yellow-50 flex items-center justify-center shrink-0">
+                    <svg class="w-6 h-6 text-bee-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-base font-bold text-matte-900" data-i18n="banner-title">GDPR Compliant & Zero Analytics Tracking</h4>
+                    <p class="text-sm text-matte-800 mt-1" data-i18n="banner-desc">We respect your absolute right to digital privacy. No storage, no tracking cookies, and no telemetry.</p>
+                </div>
+            </div>
+            <div class="shrink-0">
+                <a href="#features" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-matte-100 hover:bg-matte-200 text-sm font-bold text-matte-900 transition-colors" data-i18n="banner-btn">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <!-- Features / Why Standalone Section -->
+        <section id="features" class="py-16 mt-8 border-t border-matte-200/60">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h3 class="text-3xl font-bold text-matte-900" data-i18n="features-heading">Engineered for Modern Web Workflows</h3>
+                <p class="text-matte-800 mt-3" data-i18n="features-sub">Discover why professionals rely on The Smart Bee serverless utilities.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white/50 rounded-xl border border-matte-200/80">
+                    <h4 class="text-lg font-bold text-matte-900 mb-2" data-i18n="feat1-title">Ultra-Low Latency</h4>
+                    <p class="text-sm text-matte-800 leading-relaxed" data-i18n="feat1-desc">Because calculations occur entirely on your local CPU, files are converted instantly. No network lag, no upload queues, and no throttling.</p>
+                </div>
+                <div class="p-6 bg-white/50 rounded-xl border border-matte-200/80">
+                    <h4 class="text-lg font-bold text-matte-900 mb-2" data-i18n="feat2-title">Unlimited File Sizes</h4>
+                    <p class="text-sm text-matte-800 leading-relaxed" data-i18n="feat2-desc">Without proxy servers to limit upload limits, you can convert huge files directly within your browser's allocated system memory.</p>
+                </div>
+                <div class="p-6 bg-white/50 rounded-xl border border-matte-200/80">
+                    <h4 class="text-lg font-bold text-matte-900 mb-2" data-i18n="feat3-title">Complete Offline Access</h4>
+                    <p class="text-sm text-matte-800 leading-relaxed" data-i18n="feat3-desc">Once the tool pages load, they can function entirely offline. Perfect for remote setups, secure office spaces, or unstable connections.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-matte-200/60 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <!-- Logo & Copyright -->
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="w-8 h-8 rounded-lg bg-bee-400 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-matte-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-sm font-bold text-matte-900">THE SMART BEE</span>
+                        <p class="text-xs text-matte-500 mt-0.5" data-i18n="copyright">© 2024 share.com.ly. All rights reserved.</p>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-matte-600">
+                    <a href="https://a.share.com.ly" target="_blank" class="hover:text-bee-600 transition-colors">a.share</a>
+                    <a href="https://b.share.com.ly" target="_blank" class="hover:text-bee-600 transition-colors">b.share</a>
+                    <a href="https://c.share.com.ly" target="_blank" class="hover:text-bee-600 transition-colors">c.share</a>
+                    <a href="https://d.share.com.ly" target="_blank" class="hover:text-bee-600 transition-colors">d.share</a>
+                    <a href="https://e.share.com.ly" target="_blank" class="hover:text-bee-600 transition-colors">e.share</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dual Language Controller JS Engine -->
+    <script>
+        // Localization Dictionary
+        const translations = {
+            en: {
+                "brand-tag": "PREMIUM NETWORK",
+                "brand-title": "THE SMART BEE",
+                "status-text": "All Systems Operational",
+                "hero-badge": "100% Serverless & Private",
+                "hero-heading": 'High-Performance <span class="text-transparent bg-clip-text bg-gradient-to-r from-bee-600 to-bee-500">Local Utilities</span>',
+                "hero-subtitle": "Experience ultra-fast file operations without compromising security. Every single tool runs entirely inside your browser—your sensitive data never touches an external server.",
+                "badge-privacy": "Zero Server Uploads",
+                "badge-speed": "Instant Browser Execution",
+                "cat-pdf": "PDF UTILITY",
+                "cat-img": "IMAGE UTILITY",
+                "status-local": "LOCAL",
+                "action-launch": "Launch Utility",
+                "network-info": "NETWORK ARCHITECTURE",
+                "network-title": "Privacy by Design",
+                "network-desc": "Our utility matrix operates completely client-side. The code is executed using your computer's local processing power, meaning your data never touches any remote cloud storage.",
+                "architecture-tag": "Serverless WASM / JS",
+                "banner-title": "GDPR Compliant & Zero Analytics Tracking",
+                "banner-desc": "We respect your absolute right to digital privacy. No storage, no tracking cookies, and no telemetry.",
+                "banner-btn": "Learn More",
+                "features-heading": "Engineered for Modern Web Workflows",
+                "features-sub": "Discover why professionals rely on The Smart Bee serverless utilities.",
+                "feat1-title": "Ultra-Low Latency",
+                "feat1-desc": "Because calculations occur entirely on your local CPU, files are converted instantly. No network lag, no upload queues, and no throttling.",
+                "feat2-title": "Unlimited File Sizes",
+                "feat2-desc": "Without proxy servers to limit upload limits, you can convert huge files directly within your browser's allocated system memory.",
+                "feat3-title": "Complete Offline Access",
+                "feat3-desc": "Once the tool pages load, they can function entirely offline. Perfect for remote setups, secure office spaces, or unstable connections.",
+                "copyright": "© 2024 share.com.ly. All rights reserved.",
+                
+                // Cards
+                "card1-title": "Image to PDF",
+                "card1-desc": "Convert PNG, JPG, WebP, and other image formats into high-quality PDF documents locally in your browser.",
+                "card2-title": "Image Compressor",
+                "card2-desc": "Reduce the file size of your photos instantly and optimize them without losing any visual quality.",
+                "card3-title": "PDF to JPG Converter",
+                "card3-desc": "Extract all embedded pages inside a PDF document and save them as separate high-definition JPG images.",
+                "card4-title": "JPG to PDF Converter",
+                "card4-desc": "Compile several JPG files into a single, beautifully formatted, and cohesive PDF publication instantly.",
+                "card5-title": "Image Resizer",
+                "card5-desc": "Resize and scale images to exact dimensions, aspect ratios, or target file constraints with precision control."
+            },
+            ar: {
+                "brand-tag": "شبكة متميزة",
+                "brand-title": "النحلة الذكية",
+                "status-text": "جميع الأنظمة تعمل بكفاءة",
+                "hero-badge": "خادم محلي وآمن بنسبة 100%",
+                "hero-heading": 'أدوات محلية <span class="text-transparent bg-clip-text bg-gradient-to-r from-bee-600 to-bee-500">عالية الأداء</span>',
+                "hero-subtitle": "استمتع بعمليات ملفات فائقة السرعة دون المساومة على الأمان. تعمل كل أداة بالكامل داخل متصفحك — لا تصل بياناتك الحساسة مطلقاً إلى خادم خارجي.",
+                "badge-privacy": "صفر رفع للملفات",
+                "badge-speed": "تشغيل فوري في المتصفح",
+                "cat-pdf": "أداة PDF",
+                "cat-img": "أداة صور",
+                "status-local": "محلي",
+                "action-launch": "تشغيل الأداة",
+                "network-info": "بنية الشبكة",
+                "network-title": "الخصوصية كمنهج أساسي",
+                "network-desc": "تعمل مصفوفة الأدوات لدينا بالكامل من جانب العميل. يتم تشغيل التعليمات البرمجية باستخدام المعالج المحلي لجهازك، مما يعني أن بياناتك لا تلمس أي خادم سحابي.",
+                "architecture-tag": "خوادم WASM / JS محلية",
+                "banner-title": "متوافق مع معايير GDPR وبدون تتبع",
+                "banner-desc": "نحن نحترم حقك المطلق في الخصوصية الرقمية. لا تخزين، لا ملفات تعريف ارتباط للتتبع، ولا تحليلات.",
+                "banner-btn": "اعرف المزيد",
+                "features-heading": "مُهندسة لمهام الويب الحديثة",
+                "features-sub": "اكتشف لماذا يعتمد المحترفون على أدوات النحلة الذكية الخالية من الخوادم.",
+                "feat1-title": "زمن انتقال منخفض للغاية",
+                "feat1-desc": "نظرًا لأن العمليات تحدث بالكامل على جهازك، يتم تحويل الملفات فوراً دون تأخير الشبكة أو طوابير الرفع.",
+                "feat2-title": "أحجام ملفات غير محدودة",
+                "feat2-desc": "بدون قيود الخوادم الخارجية، يمكنك تحويل ملفات ضخمة مباشرة داخل الذاكرة المخصصة لمتصفحك.",
+                "feat3-title": "عمل كامل بدون إنترنت",
+                "feat3-desc": "بمجرد تحميل صفحات الأدوات، يمكنها العمل تماماً دون اتصال بالإنترنت. مثالية للبيئات الحساسة والنائية.",
+                "copyright": "© 2024 share.com.ly. جميع الحقوق محفوظة.",
+                
+                // Cards
+                "card1-title": "تحويل الصور إلى PDF",
+                "card1-desc": "قم بتحويل صور PNG و JPG و WebP وصيغ الصور الأخرى إلى مستندات PDF عالية الجودة محلياً في متصفحك.",
+                "card2-title": "ضغط الصور الذكي",
+                "card2-desc": "قلل حجم ملف الصور فوراً وقم بتحسينها دون خسارة أي جودة مرئية تذكر.",
+                "card3-title": "تحويل PDF إلى JPG",
+                "card3-desc": "استخرج جميع الصفحات المضمنة داخل مستند PDF واحفظها كصور JPG منفصلة عالية الدقة.",
+                "card4-title": "تحويل JPG إلى PDF",
+                "card4-desc": "اجمع ملفات JPG متعددة في مستند PDF واحد منسق ومترابط بشكل جميل على الفور.",
+                "card5-title": "تغيير حجم الصور",
+                "card5-desc": "قم بتغيير حجم الصور ومقياسها إلى أبعاد دقيقة أو نسب عرض إلى ارتفاع معينة بدقة متناهية."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function updateUI() {
+            // Update document direction and lang attribute
+            const html = document.documentElement;
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+            // Apply specific font families
+            if (currentLang === 'ar') {
+                document.body.classList.remove('font-sans');
+                document.body.classList.add('font-arabic');
+            } else {
+                document.body.classList.remove('font-arabic');
+                document.body.classList.add('font-sans');
+            }
+
+            // Translate all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+
+            // Handle special innerHTML for hero heading
+            const heroHeading = document.getElementById('hero-heading');
+            if (heroHeading) {
+                heroHeading.innerHTML = translations[currentLang]['hero-heading'];
+            }
+
+            // Update language toggle button text
+            const langBtnText = document.getElementById('lang-btn-text');
+            if (langBtnText) {
+                langBtnText.textContent = currentLang === 'en' ? 'العربية' : 'English';
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            updateUI();
+            // Optional: Save preference to localStorage
+            localStorage.setItem('preferred-language', currentLang);
+        }
+
+        // Initialize language on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-language');
+            if (savedLang && (savedLang === 'en' || savedLang === 'ar')) {
+                currentLang = savedLang;
+            } else {
+                // Auto-detect browser language
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang.startsWith('ar')) {
+                    currentLang = 'ar';
+                }
+            }
+            updateUI();
+        });
+    </script>
 </body>
 </html>
